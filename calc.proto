@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package calcPackage;
+
+service CalculadoraService {
+    rpc Calcular(Calc) returns (Resultado);
+}
+
+message Calc {
+    int32 val1 = 1;
+    int32 val2 = 2;
+    TipoOperacao operacao = 3;
+}
+
+enum TipoOperacao {
+    ADICAO = 0;
+    SUBSTRACAO = 1;
+    DIVISAO = 2;
+    MULTIPLICACAO = 3;
+}
+
+message Resultado {
+    string resultado = 1;
+}
